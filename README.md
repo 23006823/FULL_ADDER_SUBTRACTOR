@@ -36,20 +36,47 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
+**Truthtable Truth table for full adder: **
+![image](https://github.com/23006823/FULL_ADDER_SUBTRACTOR/assets/138971409/09787606-e088-4736-89dc-a7f127bec019)
+Truth table for full subtractor:
+![image](https://github.com/23006823/FULL_ADDER_SUBTRACTOR/assets/138971409/89c6c8be-deb3-4912-ac60-4747d09d55d1)
+
 
 **Procedure**
 
-Write the detailed procedure here
+1.Open Quartus II and create a new project.
 
+2.Use schematic design entry to draw the full adder and full subtractor circuit.
+
+3.The circuit consists of XOR, AND, and OR gates.
+
+4.Compile the design, verify its functionality through simulation.
+
+5.Implement the design on the target device and program it.
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:M GAYATHIRI ROSHINI RegisterNumber:212223110012
 */
+```
+
+
+module FullAddSub(a,b,c,sum,carry,D,BO);
+input a,b,c;
+output sum,carry,D,BO;
+assign sum=a^b^c;
+assign carry=(a&b)|(b&c)|(a&c);
+assign D=a^b^c;
+assign BO=(~a&b)|(b&c)|(~a&c);
+endmodule
+```
+![image](https://github.com/23006823/FULL_ADDER_SUBTRACTOR/assets/138971409/d23e71d5-06e4-4a99-b790-2d8c0e045954)
 
 **RTL Schematic**
 
+![image](https://github.com/23006823/FULL_ADDER_SUBTRACTOR/assets/138971409/874ea3df-4831-4484-bfd4-82534acd93e3)
+
 **Output Timing Waveform**
+![image](https://github.com/23006823/FULL_ADDER_SUBTRACTOR/assets/138971409/28fff3a8-8f0a-45aa-8e8b-40ea0535089d)
 
 **Result:**
 
